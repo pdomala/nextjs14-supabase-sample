@@ -5,7 +5,10 @@ export default async function Home() {
     const supabase = createClient();
     const {
         data: { session },
+        error,
     } = await supabase.auth.getSession();
     console.log(session);
+    console.log(error);
+    
     return <p className='text-2xl'>Home Page</p>;
 }
